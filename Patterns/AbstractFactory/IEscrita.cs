@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns_CarlosEduardo
+namespace Patterns.AbstractFactory
 {
-    class Program
+    interface IEscrita
     {
-        static void Main(string[] args)
-        {
-        }
+        string Nome();
     }
 }
