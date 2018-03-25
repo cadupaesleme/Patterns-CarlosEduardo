@@ -70,7 +70,12 @@ namespace Patterns
 
 
             QuestaoComposite questao1Port = new QuestaoComposite { Enunciado = "Enunciado" };
-            questao1Port.Adicionar(new QuestaoObjetiva { Enunciado = "Enunciado da Questão" });
+            QuestaoObjetiva questao1PortObj = new QuestaoObjetiva { Enunciado = "Enunciado da Questão" };
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa1" });
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa2" });
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa3" });
+
+            questao1Port.Adicionar(questao1PortObj);
 
 
             //questao composta com subquestoes simples e subquestoes compostas
@@ -107,7 +112,13 @@ namespace Patterns
 
             //questao composta com 2 subquestoes de tipos diferentes
             QuestaoComposite questao1Mat = new QuestaoComposite { Enunciado = "Enunciado" };
-            questao1Mat.Adicionar(new QuestaoObjetiva { Enunciado = "Enunciado da Questão" });
+            QuestaoObjetiva questao1MatObj = new QuestaoObjetiva { Enunciado = "Enunciado da Questão" };
+            questao1MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa1" });
+            questao1MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa2" });
+            questao1MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa3" });
+            questao1Mat.Adicionar(questao1MatObj);
+
+
             questao1Mat.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
 
             //questao composta com subquestoes simples e subquestoes compostas
@@ -130,7 +141,13 @@ namespace Patterns
             //questao com subquestoes
             QuestaoComposite questao3Mat = new QuestaoComposite { Enunciado = "Enunciado" };
             questao3Mat.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
-            questao3Mat.Adicionar(new QuestaoObjetiva { Enunciado = "Enunciado da Questão" });
+            QuestaoObjetiva questao3MatObj = new QuestaoObjetiva { Enunciado = "Enunciado da Questão" };
+            questao3MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa1" });
+            questao3MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa2" });
+            questao3MatObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa3" });
+
+            questao3Mat.Adicionar(questao3MatObj);
+
             provaEscrita1.Questoes.Add(questao3Mat);
 
             provaEscrita1.ExibirProva();

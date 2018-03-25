@@ -68,6 +68,7 @@
     <Compile Include="AbstractFactory\OralPresencial.cs" />
     <Compile Include="AbstractFactory\PrimeiraAvaliacao.cs" />
     <Compile Include="AbstractFactory\SegundaAvaliacao.cs" />
+    <Compile Include="Composite\Alternativa.cs" />
     <Compile Include="Composite\IQuestao.cs" />
     <Compile Include="Composite\Prova.cs" />
     <Compile Include="Composite\QuestaoDiscursiva.cs" />
