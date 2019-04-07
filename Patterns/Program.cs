@@ -47,61 +47,8 @@ namespace Patterns
             Console.WriteLine("-------------------------- Gerando as Provas Escritas do Curso --------------------------");
             Console.WriteLine("");
 
-            GerarProvaMatematica();
-
-            Console.WriteLine("----------------------------------------------------------------------------------");
-            Console.WriteLine("");
-
-            GerarProvaPortugues();
-
-            Console.ReadLine();
-
-
-        }
-
-        private static void GerarProvaPortugues()
-        {
-            //cria uma prova de Portugues
-            Prova provaEscrita2 = new ProvaPortugues();
-
-            Console.WriteLine("Prova de " + provaEscrita2.Materia);
-            Console.WriteLine("Tempo Estimado em Minutos: " + provaEscrita2.calculaTempoProva());
-            Console.WriteLine("");
-
-
-            QuestaoComposite questao1Port = new QuestaoComposite { Enunciado = "Enunciado" };
-            QuestaoObjetiva questao1PortObj = new QuestaoObjetiva { Enunciado = "Enunciado da Questão" };
-            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa1" });
-            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa2" });
-            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa3" });
-
-            questao1Port.Adicionar(questao1PortObj);
-
-            //questao composta com subquestoes simples e subquestoes compostas
-            QuestaoComposite compositePort = new QuestaoComposite { Enunciado = "Enunciado da Questão" };
-            compositePort.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
-
-            QuestaoComposite composite2Port = new QuestaoComposite { Enunciado = "Enunciado da Questão" };
-            composite2Port.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
-            compositePort.Adicionar(composite2Port);
-
-            questao1Port.Adicionar(compositePort);
-
-            provaEscrita2.Questoes.Add(questao1Port);
-
-            provaEscrita2.Questoes.Add(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão Simples" });
-
-
-            //questao com subquestoes
-            QuestaoComposite questao2Port = new QuestaoComposite { Enunciado = "Enunciado" };
-            questao2Port.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
-            provaEscrita2.Questoes.Add(questao2Port);
-
-            provaEscrita2.ExibirProva();
-        }
-
-        private static void GerarProvaMatematica()
-        {
+            //GerarProvaMatematica();            
+            #region Prova Matematica
             //cria uma prova de Matematica
             Prova provaEscrita1 = new ProvaMatematica();
 
@@ -152,6 +99,58 @@ namespace Patterns
             provaEscrita1.Questoes.Add(questao3Mat);
 
             provaEscrita1.ExibirProva();
+
+            #endregion
+
+            Console.WriteLine("----------------------------------------------------------------------------------");
+            Console.WriteLine("");
+
+            //GerarProvaPortugues();
+            #region Prova Portugues
+            //cria uma prova de Portugues
+            Prova provaEscrita2 = new ProvaPortugues();
+
+            Console.WriteLine("Prova de " + provaEscrita2.Materia);
+            Console.WriteLine("Tempo Estimado em Minutos: " + provaEscrita2.calculaTempoProva());
+            Console.WriteLine("");
+
+
+            QuestaoComposite questao1Port = new QuestaoComposite { Enunciado = "Enunciado" };
+            QuestaoObjetiva questao1PortObj = new QuestaoObjetiva { Enunciado = "Enunciado da Questão" };
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa1" });
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa2" });
+            questao1PortObj.AdicionarAlternativa(new Alternativa { Nome = "Alternativa3" });
+
+            questao1Port.Adicionar(questao1PortObj);
+
+            //questao composta com subquestoes simples e subquestoes compostas
+            QuestaoComposite compositePort = new QuestaoComposite { Enunciado = "Enunciado da Questão" };
+            compositePort.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
+
+            QuestaoComposite composite2Port = new QuestaoComposite { Enunciado = "Enunciado da Questão" };
+            composite2Port.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
+            compositePort.Adicionar(composite2Port);
+
+            questao1Port.Adicionar(compositePort);
+
+            provaEscrita2.Questoes.Add(questao1Port);
+
+            provaEscrita2.Questoes.Add(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão Simples" });
+
+
+            //questao com subquestoes
+            QuestaoComposite questao2Port = new QuestaoComposite { Enunciado = "Enunciado" };
+            questao2Port.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
+            provaEscrita2.Questoes.Add(questao2Port);
+
+            provaEscrita2.ExibirProva();
+
+            #endregion
+
+            Console.ReadLine();
+
+
         }
+
     }
 }

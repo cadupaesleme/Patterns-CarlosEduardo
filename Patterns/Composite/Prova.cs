@@ -9,7 +9,7 @@ namespace Patterns.Composite
     public abstract class Prova
     {
         public IList<IQuestao> Questoes { get; set; }
-        static double tempoBase = 20;
+        //const double tempoBase = 20;
         private string materia;
 
         public string Materia
@@ -36,7 +36,7 @@ namespace Patterns.Composite
 
         public double calculaTempoProva()
         {
-            return tempoBase * calculaComplexidade();
+            return 20 * calculaComplexidade();
         }
 
         public void ExibirProva()
