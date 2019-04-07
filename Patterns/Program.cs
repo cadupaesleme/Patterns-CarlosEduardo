@@ -77,7 +77,6 @@ namespace Patterns
 
             questao1Port.Adicionar(questao1PortObj);
 
-
             //questao composta com subquestoes simples e subquestoes compostas
             QuestaoComposite compositePort = new QuestaoComposite { Enunciado = "Enunciado da Questão" };
             compositePort.Adicionar(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão" });
@@ -89,6 +88,8 @@ namespace Patterns
             questao1Port.Adicionar(compositePort);
 
             provaEscrita2.Questoes.Add(questao1Port);
+
+            provaEscrita2.Questoes.Add(new QuestaoDiscursiva { Enunciado = "Enunciado da Questão Simples" });
 
 
             //questao com subquestoes

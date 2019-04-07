@@ -35,13 +35,15 @@ namespace Patterns.Composite
             else
                 Console.WriteLine(new String(' ', i) + pai + "." + iterador + enunciado);
 
-            //desce um nivel no pai
-            if (this.GetType() == typeof(QuestaoComposite) && iterador != 0)
+            //um composite dentro de um composite
+            //para isso deve-se pegar o pai e acrescentar sua ordem para passar para seus filhos
+            if (iterador != 0)
             {
                 pai = pai + "." + iterador;
-                iterador = 0;
             }
 
+            //zera o iterador por conta dos filhos
+            iterador = 0;
 
             //exibe os filhos
             foreach (IQuestao q in SubQuestoes)
